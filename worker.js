@@ -309,11 +309,11 @@ function getFavicon(url) {
         
         // 使用高质量的favicon服务，按优先级排序
         const faviconServices = [
-            `https://www.google.com/s2/favicons?domain=${domain}&sz=128`,  // Google服务，128px高质量
-            `https://favicon.yandex.net/favicon/${domain}`,              // Yandex服务
-            `https://icons.duckduckgo.com/ip3/${domain}.ico`,            // DuckDuckGo服务
+            // `https://favicon.yandex.net/favicon/${domain}`,              // Yandex服务
+            // `https://icons.duckduckgo.com/ip3/${domain}.ico`,            // DuckDuckGo服务
             `https://icon.horse/icon/${domain}`,                         // IconHorse服务
-            `https://besticon.herokuapp.com/icon?size=128..256..512&url=${domain}` // BestIcon服务
+            `https://www.google.com/s2/favicons?domain=${domain}&sz=128`,  // Google服务，128px高质量
+            // `https://besticon.herokuapp.com/icon?size=128..256..512&url=${domain}` // BestIcon服务
         ];
         
         // 返回第一个favicon服务URL
@@ -821,6 +821,32 @@ function renderHTML(index) {
             target.scrollIntoView({ behavior: 'smooth' });
           }
         });
+      });
+      
+      // 图标加载优化
+      document.querySelectorAll('.favicon').forEach(img => {
+        img.addEventListener('error', function() {
+          // 如果图标加载失败，使用备用图标服务
+          const currentSrc = this.src;
+          if (currentSrc.includes('google.com/s2/favicons')) {
+            // 切换到Yandex服务
+            this.src = currentSrc.replace('google.com/s2/favicons?domain=', 'favicon.yandex.net/favicon/').replace('&sz=128', '');
+          } else if (currentSrc.includes('yandex.net/favicon')) {
+            // 切换到DuckDuckGo服务
+            const domain = currentSrc.split('/').pop();
+            this.src = 'https://icons.duckduckgo.com/ip3/' + domain + '.ico';
+          }
+        });
+        
+        // 添加加载完成后的优化
+        img.addEventListener('load', function() {
+          // 确保图标清晰显示
+          this.style.opacity = '1';
+        });
+        
+        // 初始状态
+        img.style.opacity = '0.8';
+        img.style.transition = 'opacity 0.3s ease';
       });
     </script>
   </body>
