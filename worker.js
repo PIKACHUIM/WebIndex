@@ -61,6 +61,41 @@ const config = {
                     desc: "查看当前IP地址"
                 },
                 {
+                    url: "https://dnspod.524228.xyz",
+                    name: "DoH代理服务",
+                    desc: "安全、快速的DNS解析服务"
+                },
+                {
+                    url: "https://github.524228.xyz",
+                    name: "Github代理",
+                    desc: "GitHub访问代理"
+                },
+                {
+                    url: "https://gitorg.524228.xyz",
+                    name: "Github代理（修改地址）",
+                    desc: "GitHub访问代理，通过可变URL实现"
+                },
+                {
+                    url: "https://etpage.524228.xyz",
+                    name: "EasyTier节点共享平台",
+                    desc: "EasyTier节点共享平台"
+                },
+                {
+                    url: "https://valuts.524228.xyz",
+                    name: "BitWarden三方托管平台",
+                    desc: "存储您的密码和敏感信息"
+                },
+                {
+                    url: "https://docker.524228.xyz",
+                    name: "Docker代理",
+                    desc: "Docker镜像代理服务"
+                },
+                {
+                    url: "https://dnspod.524228.xyz",
+                    name: "DoH代理服务",
+                    desc: "安全、快速的DNS解析服务"
+                },
+                {
                     url: "https://ittool.524228.xyz",
                     name: "IT工具集合",
                     desc: "各种IT实用工具"
@@ -69,11 +104,6 @@ const config = {
                     url: "https://coding.524228.xyz",
                     name: "皮卡代码站",
                     desc: "代码分享平台"
-                },
-                {
-                    url: "https://linker.524228.xyz",
-                    name: "代理订阅站",
-                    desc: "代理服务订阅"
                 },
                 {
                     url: "https://scribe.524228.xyz",
@@ -100,16 +130,7 @@ const config = {
                     name: "图片处理站",
                     desc: "在线图片处理工具"
                 },
-                {
-                    url: "https://docker.524228.xyz",
-                    name: "Docker代理",
-                    desc: "Docker镜像代理服务"
-                },
-                {
-                    url: "https://github.524228.xyz",
-                    name: "Github代理",
-                    desc: "GitHub访问代理"
-                },
+
                 {
                     url: "https://onecdn.524228.xyz",
                     name: "Onedrive站",
@@ -134,7 +155,12 @@ const config = {
                     url: "https://testca.524228.xyz",
                     name: "测试证书CA",
                     desc: "测试证书颁发机构"
-                }
+                },
+                {
+                    url: "https://unlock.524228.xyz",
+                    name: "音乐解锁平台",
+                    desc: "一键去除音乐加密"
+                },
             ]
         },
         {
